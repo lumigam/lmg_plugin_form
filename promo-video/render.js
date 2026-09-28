@@ -6,7 +6,8 @@ const [,, wk, nw, fps] = process.argv; const FPS = +fps, N = Math.round(46 * FPS
   p.on('pageerror', e => console.log('ERR', e.message));
   await p.goto('file://' + __dirname + '/index.html'); await p.waitForFunction('window.ready===true');
   fs.mkdirSync('out', { recursive: true });
-  for (let i = +wk; i < N; i += +nw) {
+  const S0=+(process.env.START||0), E0=+(process.env.END||N);
+  for (let i = S0 + +wk; i < E0; i += +nw) {
     await p.evaluate(t => render(t), i / FPS);
     await p.locator('#c').screenshot({ path: `out/f${String(i).padStart(5, '0')}.jpg`, type: 'jpeg', quality: 93 });
   }

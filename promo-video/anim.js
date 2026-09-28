@@ -394,7 +394,7 @@ function drawWorld(g, t) {
   label(g, t, 'Pero cuidarla es un trabajo enorme.', 640, 74, 16.5, 21.2, { size: 58, bg: '#fdeee0' });
   // logo PubliWP
   if (t > 23.9 && t < 27.2) { const s = pop(t, 24.0, .7) * gone(t, 26.9, .35); drawLogo(g, 640, 118, .78 * s, s); }
-  label(g, t, 'Cuatro Vigilantes revisan tu web.', 560, 52, 27.2, 30.3, { size: 46, bg: '#eaf6ff' });
+  label(g, t, 'Vigilantes que cuidan tu web.', 560, 52, 27.2, 30.3, { size: 48, bg: '#eaf6ff' });
   drawOwls(g, t);
   drawTiles(g, t);
 }
