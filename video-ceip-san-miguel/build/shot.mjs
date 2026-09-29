@@ -5,6 +5,6 @@ const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/ch
 const p=await b.newPage({viewport:{width:960,height:540}});
 p.on('pageerror',e=>console.log('ERR',e.message));
 await p.goto(pathToFileURL('/home/user/lmg_plugin_form/video-ceip-san-miguel/anuncio.html').href+'?render=1');
-await p.evaluate(()=>document.fonts.ready);
-for(const t of ts){await p.evaluate(t=>window.renderAt(t),+t);await p.screenshot({path:`${dir}/f_${String(t).padStart(5,'0')}.png`});}
+await p.evaluate(()=>window.fontsReady);
+for(const t of ts){await p.evaluate(t=>window.renderAt(t),+t);await p.screenshot({path:`${dir}/f_${String(Math.round(t*10)).padStart(4,"0")}.png`});}
 await b.close();
