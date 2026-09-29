@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PLACEAT · El peldaño</title>
+<style>
+  html,body{margin:0;height:100%;background:#0b1a3f;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  canvas{display:block;max-width:100vw;max-height:100vh}
+  #play{position:fixed;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:18px;background:rgba(11,26,63,.8);color:#fff;font:600 22px Poppins,system-ui,sans-serif;cursor:pointer}
+  #play b{width:96px;height:96px;border-radius:50%;background:#4b8fcf;display:grid;place-items:center;font-size:40px;box-shadow:0 0 0 14px rgba(75,143,207,.28)}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="play"><b>▶</b>Pulsa para ver el anuncio (con sonido)</div>
+<script type="module" src="anim.js"></script>
+</body>
+</html>
